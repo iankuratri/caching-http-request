@@ -50,7 +50,7 @@ async function deleteOldCaches(currentCache) {
 async function fetchTodo() {
   try {
     const data = await getData();
-    console.log({ data });
+    console.log(data);
   } catch (error) {
     console.error({ error });
   }
