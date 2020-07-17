@@ -43,6 +43,7 @@ export class HttpClientService {
       const data = this._cacheService.load(options.url);
       // Return data from cache
       if (data !== null) {
+        console.log('Retrieved cached data');
         return of<T>(data);
       }
     }
@@ -61,6 +62,7 @@ export class HttpClientService {
               expirationMins: options.cacheMins,
             });
           }
+          console.log('Fetching fresh data');
           return of<T>(response);
         })
       );
